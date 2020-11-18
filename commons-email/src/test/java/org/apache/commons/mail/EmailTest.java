@@ -157,4 +157,14 @@ public class EmailTest {
 			 email.setHostName("localhost");
 			 email.getMailSession();		
 		}
+		
+		/*
+		 *  getSocketConnectionTimeout()
+		 */
+		@Test
+		public void testgetSocketConnectionTimeout() throws Exception{
+			email.setSocketConnectionTimeout(4);
+			email.getSocketConnectionTimeout();
+			
+		}
 }
