@@ -3,11 +3,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 //import java.sql.SQLException;
-//import java.util.Date;
+import java.util.Date;
 
 //import javax.mail.Address;
 //import javax.mail.internet.MimeMessage;
-//import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
@@ -101,6 +101,24 @@ public class EmailTest {
 			email.getHostName();	
 			email.setHostName("Sumaiya");
 			email.getHostName();		
+		}
+		/*
+		 * getSentDate()
+		 */
+		@Test
+		public void testGetSentDateNull(){
+			Date test = email.getSentDate();
+			assertTrue(test instanceof Date);
+			
+		}
+		
+		@Test
+		public void testGetSentDate() {
+			Date test = new Date();
+			email.setSentDate(test);
+			Date actdate = email.getSentDate();
+			assertEquals(test, actdate);
+			
 		}
 	 
 		
