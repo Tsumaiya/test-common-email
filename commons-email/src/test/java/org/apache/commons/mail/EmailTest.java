@@ -93,6 +93,15 @@ public class EmailTest {
 	 public void testSetFrom() throws Exception {
 			email.setFrom(TEST_EM);		 
 		}
+	 /*
+		 * String  getHostName()
+		 */
+		@Test
+		public void testGetHostName() {
+			email.getHostName();	
+			email.setHostName("Sumaiya");
+			email.getHostName();		
+		}
 	 
 		
 }
