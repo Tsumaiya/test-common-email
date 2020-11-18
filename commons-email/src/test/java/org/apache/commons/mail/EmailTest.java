@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.Date;
 
 //import javax.mail.Address;
-//import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMessage;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
@@ -121,5 +121,34 @@ public class EmailTest {
 			
 		}
 	 
-		
+		/*
+		 * buildMimeMessage()
+		 */
+		@Test
+		public  void testbuildMimeMessage()throws Exception
+		{
+			email.setHostName("localhost");
+			email.setSmtpPort(8080);
+			email.setFrom("a@b.com");
+			email.addTo("c@d.com");
+			email.setSubject("test mail");
+			//email.setText("test");
+			//email.getContentType();
+
+			final String headerValue = "1234567890 1234567890 123456789 01234567890 123456789 0123456789 01234567890 01234567890";
+			email.addHeader("X-LongHeader", headerValue);
+
+			email.buildMimeMessage();
+
+			MimeMessage msg = email.getMimeMessage();
+			msg.saveChanges();
+
+			 //String from= msg.getFromAddress();
+
+			//assertEquals(from,"a@b.com");
+			//assertEquals(from,"a@b.com");
+			
+			
+			
+		}
 }
