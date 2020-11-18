@@ -86,5 +86,13 @@ public class EmailTest {
 		 	email.addHeader(TEST_EM1, TEST_VNAME);
 		
 	 }
+	 /*
+		 * setFrom(String email)
+		 */
+	 @Test
+	 public void testSetFrom() throws Exception {
+			email.setFrom(TEST_EM);		 
+		}
+	 
 		
 }
