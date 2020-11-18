@@ -67,4 +67,24 @@ public class EmailTest {
 		email.addReplyTo(TEST_EM, TEST_VNAME );
 		assertEquals(1, email.getReplyToAddresses().size());
 	}
+	
+	/*
+	 * addHeader(String name, String value)
+	 */
+
+	 @Test
+	 public void testaddHeader() throws Exception{
+			
+		 	email.addHeader(TEST_EM, TEST_VNAME );
+		 	//email.addHeader(TEST_EM1, TEST_VNAME);
+		
+	 }
+	 @Test(expected=IllegalArgumentException.class)
+	 public void testaddHeaderEmpty() throws Exception{
+			
+		 	//email.addHeader(TEST_EM, TEST_VNAME );
+		 	email.addHeader(TEST_EM1, TEST_VNAME);
+		
+	 }
+		
 }
