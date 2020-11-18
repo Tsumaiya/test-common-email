@@ -148,7 +148,13 @@ public class EmailTest {
 			//assertEquals(from,"a@b.com");
 			//assertEquals(from,"a@b.com");
 			
-			
-			
+		}
+		/*
+		 *  getMailSession()
+		 */
+		@Test
+		public  void testgetMailSession() throws Exception{
+			 email.setHostName("localhost");
+			 email.getMailSession();		
 		}
 }
