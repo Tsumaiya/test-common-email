@@ -57,4 +57,14 @@ public class EmailTest {
 		email.addCc(TEST_EMAILS);
 		assertEquals(3, email.getCcAddresses().size());
 	}
+	
+	/*
+	 * Test addReplyTo(String email, String name(value)) function
+	 */
+	@Test
+	public void testaddReplyTo() throws Exception {
+		
+		email.addReplyTo(TEST_EM, TEST_VNAME );
+		assertEquals(1, email.getReplyToAddresses().size());
+	}
 }
